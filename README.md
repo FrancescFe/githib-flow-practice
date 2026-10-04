@@ -1,10 +1,10 @@
 # GitHub Flow Practice
 
-This repository is for practicing GitHub Flow with a small static website built with HTML and CSS and published through GitHub Pages. The website files live in the repository root. No JavaScript, dependencies, or build tools are required.
+This repository is for practicing GitHub Flow with a small static website published through GitHub Pages. GitHub Pages uses Jekyll to generate the site, but students do not need to install it or edit HTML or CSS.
 
-## Add your profile using GitHub Flow
+## Add your student profile
 
-1. **Open an issue** describing the profile you plan to add and its acceptance criteria.
+1. **Open an issue.** Choose the **Add a student profile** template and replace its placeholders with your name, GitHub username, and course.
 2. **Create a feature branch from the latest `main`:**
 
    ```sh
@@ -14,26 +14,40 @@ This repository is for practicing GitHub Flow with a small static website built 
    ```
 
    Replace `first_last` with your lowercase name, using underscores between names.
-3. **Add your profile page** as an HTML file in the repository root, for example `first_last.html`. Add a link to it in the `Students` dropdown in `index.html` and every existing student page. Keep links relative and reuse `styles.css`.
-4. **Validate your change:** check that Home opens your profile, that you can return to Home, that `Students` reveals your link, and that the shared styles load. You can open `index.html` directly or start a local static server with `python3 -m http.server` and visit `http://localhost:8000/`.
-5. **Review and publish your changes:**
+3. **Create your profile file** by copying the provided Markdown template:
+
+   ```sh
+   cp .github/student-profile-template.md _students/first_last.md
+   ```
+
+   Edit the four values at the top of the file: your full name, display name, GitHub username, and course. The site generates your page and adds you to the `Students` menu automatically. Do not edit the shared layouts, navigation, `index.html`, or CSS.
+4. **Review your change:**
 
    ```sh
    git status
    git diff --check
-   git add *.html styles.css
+   git diff
+   ```
+
+   Make sure your branch contains only your profile file and that the values are correct. The published page will be available at `https://francescfe.github.io/github-flow-practice/students/first_last/` after the change is merged and Pages finishes publishing.
+5. **Commit and push your feature branch:**
+
+   ```sh
+   git add _students/first_last.md
    git commit -m "feat: add first last student profile"
    git push -u origin feature_first_last
    ```
 
-6. **Open a pull request** from your branch into `main`. Include `Closes #<issue-number>` in the description and review the diff before merging.
-7. **After the merge,** delete the remote branch and sync your local copy:
+6. **Open a pull request** from your branch into `main`. The pull request template includes a checklist. Replace `#<issue-number>` in `Closes #<issue-number>` with the issue you created.
+7. **Wait for review and approval.** The repository administrator will merge the approved pull request using squash merge.
+8. **After the merge, sync your local `main` and remove your branch:**
 
    ```sh
-   git push origin --delete feature_first_last
    git switch main
    git pull --ff-only origin main
-   git branch -d feature_first_last
+   git branch -D feature_first_last
    ```
 
-8. **Check the published site** at [GitHub Pages](https://francescfe.github.io/github-flow-practice/) after deployment finishes.
+   If GitHub has not already removed the remote branch, delete it with `git push origin --delete feature_first_last`.
+
+The site is published at [GitHub Pages](https://francescfe.github.io/github-flow-practice/).
