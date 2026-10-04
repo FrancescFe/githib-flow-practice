@@ -1,0 +1,19 @@
+title: GitHub Flow Practice
+url: https://francescfe.github.io
+baseurl: /github-flow-practice
+
+collections:
+  students:
+    output: true
+    permalink: /students/:name/
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+  - scope:
+      path: ""
+      type: students
+    values:
+      layout: student

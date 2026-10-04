@@ -1,0 +1,25 @@
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="site-name" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <nav aria-label="Main navigation">
+      <ul class="navigation">
+        <li>
+          <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>Home</a>
+        </li>
+        <li>
+          <details class="students-dropdown">
+            <summary>Students</summary>
+            <ul class="students-dropdown__menu">
+              {% assign students = site.students | sort: "display_name" %}
+              {% for student in students %}
+                <li>
+                  <a href="{{ student.url | relative_url }}"{% if page.url == student.url %} aria-current="page"{% endif %}>{{ student.display_name | escape }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </details>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
