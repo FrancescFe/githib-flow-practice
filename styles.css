@@ -56,6 +56,58 @@ body {
   text-decoration: none;
 }
 
+.students-dropdown {
+  position: relative;
+}
+
+.students-dropdown > summary {
+  display: inline-block;
+  padding: 0.45rem 0.75rem;
+  border-radius: 0.4rem;
+  color: #334155;
+  cursor: pointer;
+  list-style: none;
+}
+
+.students-dropdown > summary::-webkit-details-marker {
+  display: none;
+}
+
+.students-dropdown > summary::after {
+  margin-left: 0.4rem;
+  content: "▾";
+  font-size: 0.75em;
+}
+
+.students-dropdown[open] > summary::after {
+  content: "▴";
+}
+
+.students-dropdown > summary:hover,
+.students-dropdown > summary:focus-visible {
+  background: #e8eef8;
+  color: #1d4ed8;
+}
+
+.students-dropdown__menu {
+  position: absolute;
+  top: calc(100% + 0.25rem);
+  right: 0;
+  z-index: 1;
+  min-width: 10rem;
+  margin: 0;
+  padding: 0.4rem;
+  border: 1px solid #dbe3ed;
+  border-radius: 0.5rem;
+  background: #ffffff;
+  box-shadow: 0 0.5rem 1.5rem rgb(23 37 84 / 12%);
+  list-style: none;
+}
+
+.students-dropdown__menu a {
+  display: block;
+}
+
 .navigation a:hover,
 .navigation a:focus-visible {
   background: #e8eef8;
