@@ -51,3 +51,13 @@ This repository is for practicing GitHub Flow with a small static website publis
    If GitHub has not already removed the remote branch, delete it with `git push origin --delete feature_first_last`.
 
 The site is published at [GitHub Pages](https://francescfe.github.io/github-flow-practice/).
+
+## Run the site locally with Docker
+
+With Docker Compose installed, run these commands from this directory:
+
+```sh
+docker compose up --build
+```
+
+Open <http://localhost:4000/>. The container watches the mounted project files and rebuilds the site when they change. Stop it with `Ctrl+C`.
