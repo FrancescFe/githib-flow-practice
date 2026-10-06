@@ -1,6 +1,7 @@
 # GitHub Flow Practice
 
-This repository is for practicing GitHub Flow with a small static website published through GitHub Pages. GitHub Pages uses Jekyll to generate the site, but students do not need to install it or edit HTML or CSS.
+This repository is for practicing GitHub Flow with a small static website published through GitHub Pages.
+The site is published at [GitHub Pages](https://francescfe.github.io/github-flow-practice/).
 
 ## Add your student profile
 
@@ -29,7 +30,9 @@ This repository is for practicing GitHub Flow with a small static website publis
    git diff
    ```
 
-   Make sure your branch contains only your profile file and that the values are correct. The published page will be available at `https://francescfe.github.io/github-flow-practice/students/first_last/` after the change is merged and Pages finishes publishing.
+   Make sure your branch contains only your profile file and that the values are correct. 
+   To preview the result locally before committing, start the site with Docker (see Run the site locally with Docker) and open:
+http://localhost:4000/students/first_last/
 5. **Commit and push your feature branch:**
 
    ```sh
@@ -48,9 +51,10 @@ This repository is for practicing GitHub Flow with a small static website publis
    git branch -D feature_first_last
    ```
 
-   If GitHub has not already removed the remote branch, delete it with `git push origin --delete feature_first_last`.
-
-The site is published at [GitHub Pages](https://francescfe.github.io/github-flow-practice/).
+Once the pull request is merged, your page will be published at:
+https://francescfe.github.io/github-flow-practice/students/first_last/
+(replace first_last with your own name, as in your branch and file).
+GitHub Pages may take a couple of minutes to build and deploy; if it does not appear right away, wait a moment and reload.
 
 ## Run the site locally with Docker
 
